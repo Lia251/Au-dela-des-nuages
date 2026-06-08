@@ -1,0 +1,336 @@
+:root{
+    --screens-count: 8;
+    --mx: 1;
+    --my: 1;
+    --offset: 5vmin;
+    --speed: 0.75;
+}
+body{
+    height: calc( 100vh * var(--screens-count) );
+    margin: 0;
+
+    overflow-x: hidden;
+}
+p{
+    font-family: "legitima", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 1;
+}
+
+/* MENU */
+
+.menu--wrapper{
+    display: flex;
+    height: 10vw;
+    max-height: 65px;
+    width: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    margin: 0;
+
+    background-image: linear-gradient(to bottom, rgba(93, 70, 74, 0.461), rgba(255, 0, 0, 0));
+    backdrop-filter: blur(2px);
+}
+.menu--btn{
+    padding: 0.5%;
+    cursor: pointer;
+}
+.nav--menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    width: 300px;
+    height: 100vh;
+    
+    background-color: rgba(93, 70, 74, 0.461);
+    backdrop-filter: blur(2px);
+
+    translate: -100% 0;
+    transition: translate 0.4s cubic-bezier(0.22, 0.5, 0.36, 0.5);
+}
+.nav--menu.open{
+    translate: 0 0;
+}
+.menu--btn:hover{
+    opacity: 0.8;
+    scale: 1.1;
+}
+.nav--close{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 50;
+
+    font-size: 2.5rem;
+    line-height: 1;
+    color: hsl(257, 38%, 10%);
+
+    user-select: none;
+    cursor: pointer;
+}
+.nav--links{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    list-style: none;
+
+    padding: 0;
+    padding-left: 40px;
+    margin-top: 100px;
+}
+.nav--links a{
+    color: #FCD9A7;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    transition: color 0.2s linear;
+}
+.nav--links a:hover{
+    color: #9EEDF0;
+}
+.infos{
+    position: absolute;
+    bottom: 0;
+    justify-self: center;
+    text-align: center;
+    
+    font-size: small;
+    font-style: center;
+    user-select: none;
+    color: hsl(257, 38%, 10%);
+}
+
+/* TITRE */
+.title{
+    position: fixed;
+    translate: -50% -50%;
+    z-index: 15;
+
+    top: 50%;
+    left: 50%;
+
+    text-align: center;
+    pointer-events: none;
+
+    animation: fadeTitle 1s ease-out paused;
+    animation-delay: calc(var(--y, 0) * -1s);
+}
+.title img{
+    width: 50vw;
+}
+.title h1{
+    font-family: "boiga-fill", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 6rem;
+    
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px rgba(138, 138, 138, 0.792);
+    
+    margin: 0;
+}
+@keyframes fadeTitle {
+    0% {opacity: 1}
+    10% {opacity: 0}
+    100% {opacity: 0}
+}
+
+/* SCROLL */
+
+.scroll--wrapper{
+    display: flex;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+.scroll{
+    display: flex;
+    flex: 0 0 calc( 100vw * var(--screens-count) );
+    width: calc( 100vw * var(--screens-count) );
+    translate: calc( (100vw * (var(--screens-count) - 1)) * (var(--y,0) - 1) ) 0;
+
+    background: linear-gradient(to left, #9683C7, #FCD9A7, #9EEDF0);
+}
+
+/* BACKGROUND */
+
+.background--pattern{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    
+    height: 100%;
+
+    background-repeat: repeat;
+}
+.txt{
+    position: absolute;
+    bottom: 10vh;
+    left: 20vw;
+    width: 40vw;
+    padding: 15px 10px;
+
+    background-color: rgb(245, 237, 220);
+    border-radius: 10px;
+
+    text-align: center;
+}
+.zone1{
+    left: 600vw;
+    width: 200vw;
+
+    background-image: url("/Images/ÉTOILES.png");
+    background-size: 35vw auto;
+} 
+.zone2{
+    left: 400vw;
+    width: 200vw;
+
+    background-image: url("Images/NUAGES.png");
+    background-size: 100vw auto;
+    background-position: 0 30%;
+}
+.zone3{
+    left: 300vw;
+    width: 100vw;
+
+    background-image: url("Images/OISEAUX+BANDEROLE+TXT.png");
+    background-repeat: no-repeat;
+    background-size: 70vw auto;
+    background-position: 35% center;
+}
+.zone4{
+    left: 120vw;
+    width: 180vw;
+
+    background-image: url("Images/OISEAUX-MODIF.png");    
+    background-size: auto 95vh;
+    background-position: 0 55%;
+}
+.zone5{
+    left: 0vw;
+    width: 100vw;
+
+    background-image: url("Images/PANNEAU+FRESQUE.png");
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+    background-position: center center
+}
+.zone6{
+    left: -20vw;
+    width: 140vw;
+    z-index: -1;
+
+    background-image: url("Images/ARC_EN_CIEL.png");
+    background-repeat: no-repeat;
+    background-size: auto 120vh;
+    background-position: center center;
+}
+.txt2{
+    left: 50vw;
+}
+.txt6{
+    top: 10vh;
+    bottom: auto;
+    left: 50vw;
+
+    width: 40vw;
+}
+
+/* BALEINE */
+
+.whale--wrapper{
+    position: fixed;
+    top: 30%;
+    right: 50vw;
+    translate: calc(50% - (100vw * (var(--screens-count) - 1)) * var(--y,0)) -50%;
+    z-index: 3;
+
+    width: 90vmin;
+
+    transition: all .3s cubic-bezier(0.22, 0.5, 0.36, 0.5);
+    animation: fadeWhale 1s ease-in-out paused;
+    animation-delay: calc(var(--y, 0) * -1s);
+}
+.whale{
+    width: 110%;
+    animation: swim 5s ease-in-out infinite alternate;
+}
+
+@keyframes fadeWhale{
+    0% {opacity: 0}
+    10% {opacity: 1}
+    90%{opacity: 1}
+    100% {opacity: 0}
+}
+@keyframes swim{
+  0%{
+    translate: 0 -5%;
+    rotate: -3deg;
+    transform-origin: left bottom;
+  }
+
+  100%{
+    translate: 0 5%;
+    rotate: 3deg;
+  }
+}
+
+/* ASTRONAUTE */
+
+.astronaut--wrapper{
+    display: flex;
+    justify-content: center;
+    
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+
+    height: 35vmin;
+    max-width: 50vmin;
+}
+.astronaut--wrapper:hover .astronaut--bubble {
+    opacity: 1;
+}
+.astronaut{
+    display: block;
+
+    rotate: calc(var(--mx) * 5deg);
+    translate: calc( var(--mx) * var(--offset) * var(--speed, 1)) calc( var(--my) * var(--offset) * var(--speed, 1));
+    transition: all 0.2s linear;
+}
+.astronaut:hover{
+    scale: 1.1;
+
+}
+.astronaut--bubble{
+    background-color: rgba(93, 70, 74, 0.162);
+    backdrop-filter: blur(4px);
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    
+    height: fit-content;
+    width: fit-content;
+
+    text-align: center;
+
+    opacity: 0;
+    translate: 120% 10%;
+}
+.astronaut--bubble p{
+    font-size: 18px;
+}

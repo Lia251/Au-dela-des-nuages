@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://use.typekit.net/cru6nwi.css">
+    
+    <script src="script.js" defer></script>
+
+    <title>Au-delà des nuages</title>
+</head>
+<body>
+    <header>
+        <div class="menu--wrapper">
+            <img class="menu--btn" style="cursor: pointer;"  src="Images/PLUME_COPIE.png" alt="bouton menu">
+        </div>
+    </header>
+
+    <nav class="nav--menu">
+        <div class="nav--close" style="cursor: pointer;">&times;</div>
+
+        <ul class="nav--links">
+            <li><a href="index.html">Retour au début de l'expérience</a></li>
+            <li><a href="info.html">Informations sur l'oeuvre</a></li>
+            
+            <p class="infos">HEAJ - ARCHITECTURE TRANSMEDIA <br>
+            Caussin Pauline - Maillard Emilie - Renard Mélina</p>
+        </ul>
+    </nav>
+
+    <main class="carte">
+        <button class="pin pin--baleine" data-target="popup-baleine">
+            <span class="pin--icon">✦</span>
+            <span class="pin--text">L'oeuvre</span>
+        </button>
+        <button class="pin pin--astronaute" data-target="popup-astronaute">
+            <span class="pin--icon">✦</span>
+            <span class="pin--text">L'artiste</span>
+        </button>
+        <button class="pin pin--route" data-target="popup-route">
+            <span class="pin--icon">✦</span>
+            <span class="pin--text">L'endroit</span>
+        </button>
+    </main>
+
+    <div>
+        <div id="popup-baleine" class="modal">
+            <div class="modal--content">
+                <span class="modal--close">&times;</span>
+                <h2>L'oeuvre : "Au-delà des nuages"</h2>
+                <p>Véritable invitation au rêve, cette oeuvre utilise l'absurde et l'imaginaire afin de véhiculer des émotions au passant. Elle essaie de nous signifier que peu importe qui on est et d'où l'on vient, on peut tout à fait exister ensemble. Même si la baleine et l'astronaute n'ont pas vraiment de points en communs, ils coexistent en harmonie dans cette oeuvre.</p>
+            </div>
+        </div>
+        <div id="popup-astronaute" class="modal">
+            <div class="modal--content">
+                <span class="modal--close">&times;</span>
+                <h2>L'artiste : Sam Billen</h2>
+                <p>Sam Billen est un jeune artiste belge flamand. On sait peut de choses à son égard mais on peut voir plusieurs de ses oeuvres dans diverses grandes villes du pays.
+                Sam met à profit son oeil artistique et ses compétences pratiques polyvalentes en tant que "master of creations" et directeur artistique chez <a href="https://treepack.net/fr/">Treepack</a>.</p>
+            </div>
+        </div>
+        <div id="popup-route" class="modal">
+            <div class="modal--content">
+                <span class="modal--close">&times;</span>
+                <h2>L'endroit : Namur</h2>
+                <p>L'oeuvre se situe le long d'une grande route passante, Chaussée de Liège à Namur. Un grand mur soutenant un pont accueille la fresque.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d634.9470985027449!2d4.915477342328723!3d50.463665001853705!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sbe!4v1780951823733!5m2!1sfr!2sbe" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
