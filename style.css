@@ -191,7 +191,7 @@ p{
     left: 600vw;
     width: 200vw;
 
-    background-image: url("/Images/ETOILES.png");
+    background-image: url("Images/ETOILES.png");
     background-size: 35vw auto;
 } 
 .zone2{
